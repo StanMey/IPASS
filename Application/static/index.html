@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formaticx</title>
+
+    <script type="text/javascript" src="javascript/webfunctions.js"></script>
+</head>
+
+<body onload="loadFormationPage()">
+
+<div class="choiceForm">
+    <select id="keuzeCompetitie" onchange="set_cookie_league.call(this, event)">
+        <option disabled selected value> -- Selecteer een competitie -- </option>
+    </select>
+</div>
+
+<div class="choiceForm">
+    <select id="keuzeFormaties" onchange="set_cookie_formation.call(this, event)">
+
+    </select>
+</div>
+
+<div class="recomButton">
+     <button type="button" onclick="getFormationRecommendation()">Geef aanbeveling</button>
+</div>
+</body>
+</html>
