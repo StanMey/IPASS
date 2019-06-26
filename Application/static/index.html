@@ -2,28 +2,83 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Formaticx</title>
 
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="javascript/webfunctions.js"></script>
 </head>
 
 <body onload="loadFormationPage()">
 
-<div class="choiceForm">
-    <select id="keuzeCompetitie" onchange="set_cookie_league.call(this, event)">
-        <option disabled selected value> -- Selecteer een competitie -- </option>
-    </select>
+
+<nav class="navbar navbar-expand-sm">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="index.html">
+      <img src="images/formation_pic_2.png" alt="Logo" style="width:55px;">
+  </a>
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="navbar-brand">
+      <a class="nav-link" href="index.html">Formaticx</a>
+    </li>
+  </ul>
+
+  <ul class="nav navbar-nav ml-auto">
+      <li class="nav-item">
+          <a class="nav-link workinglink" href="uitleg.html">Hoe werkt het?</a>
+      </li>
+  </ul>
+</nav>
+
+<div class="form-row">
+    <div class="form-group col-md-6">
+        <div class="choiceForm">
+            <label for="keuzeCompetitie">Competitie tegenstander</label>
+            <select id="keuzeCompetitie" class="form-control" onchange="set_cookie_league.call(this, event)">
+            <option disabled selected value> -- Selecteer een competitie -- </option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group col-md-6">
+        <div class="choiceForm">
+            <label for="keuzeFormaties">Formatie tegenstander</label>
+            <select id="keuzeFormaties" class="form-control" onchange="set_cookie_formation.call(this, event)">
+            </select>
+        </div>
+    </div>
+    <div class="col-auto my-1">
+        <div class="recomButton">
+            <button type="submit" class="btn btn-primary" onclick="getFormationRecommendation()">Geef aanbeveling</button>
+        </div>
+    </div>
 </div>
 
-<div class="choiceForm">
-    <select id="keuzeFormaties" onchange="set_cookie_formation.call(this, event)">
+<div class="container-fluid">
+    <div class="split left_window">
+        <h2 class="recom_text">Eerste formatie:</h2>
 
-    </select>
+        <div class="left_recom_window">
+            <h4 id="first_formation" class="first_formation"></h4>
+             <canvas id="first_canvas" class="formation_canvas"></canvas>
+        </div>
+
+    </div>
+    <div class="split right_window">
+        <h2 class="recom_text">Tweede formatie:</h2>
+
+        <div class="right_recom_window">
+            <h4 id="second_formation" class="second_formation"></h4>
+            <canvas id="second_canvas" class="formation_canvas"></canvas>
+        </div>
+    </div>
 </div>
 
-<div class="recomButton">
-     <button type="button" onclick="getFormationRecommendation()">Geef aanbeveling</button>
-</div>
 </body>
 </html>

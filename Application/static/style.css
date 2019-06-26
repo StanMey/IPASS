@@ -1,0 +1,72 @@
+/* change the background color of navbar */
+.navbar {
+    background-color: #68ba16;
+    border-style: solid;
+    border-width: 2px;
+}
+
+/* change links in nav bar */
+.nav-link {
+    color: #FFFFFF;
+    font-size:x-large;
+}
+/* visited link */
+.nav-link:visited {
+    color: #FFFFFF;
+    font-size:x-large;
+}
+/* mouse over link */
+.nav-link:hover {
+    color: #FFFFFF;
+    font-size:x-large;
+}
+/* selected link */
+.nav-link:active {
+    color: #FFFFFF;
+    font-size:x-large;
+}
+.workinglink:hover {
+    text-decoration: underline white;
+}
+
+/* change the form box */
+.form-row {
+    margin: 3px;
+}
+
+/* change recommendation window */
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+}
+.left_window {
+    left: 0;
+}
+.right_window {
+    right: 0;
+}
+.recom_text {
+    text-align: center;
+}
+
+/* change formation canvas in window */
+.left_recom_window {
+    text-align: center;
+    margin: 5px;
+    margin-top: 20px;
+    height: 100%;
+}
+
+.right_recom_window {
+    text-align: center;
+    margin: 5px;
+    margin-top: 20px;
+    height: 100%;
+}
+
+.formation_canvas {
+    border: 3px solid #000000;
+    width: 400px;
+    height: 600px;
+}
