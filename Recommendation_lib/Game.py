@@ -38,14 +38,17 @@ class Game:
     """
 
     # constructor
-    def __init__(self, ht, hf, at, af, h_score, a_score, season):
-        self.home_team = str(ht)
-        self.home_formation = str(hf)
-        self.away_team = str(at)
-        self.away_formation = str(af)
-        self.home_score = int(h_score)
-        self.away_score = int(a_score)
-        self.season = str(season)
+    def __init__(self, ht: str, hf: str, at: str, af: str, h_score: int, a_score: int, season: str):
+        try:
+            self.home_team = ht
+            self.home_formation = hf
+            self.away_team = at
+            self.away_formation = af
+            self.home_score = h_score
+            self.away_score = a_score
+            self.season = season
+        except ValueError as e:
+            print("An incorrect variable type was entered\n", e)
 
     # public methods
     def get_home_team(self):

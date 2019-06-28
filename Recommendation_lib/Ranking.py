@@ -26,11 +26,14 @@ class Ranking:
     """
 
     # constructor
-    def __init__(self, team, rank, season, league):
-        self.team = str(team)
-        self.rank = int(rank)
-        self.season = str(season)
-        self.league = str(league)
+    def __init__(self, team: str, rank: int, season: str, league: str):
+        try:
+            self.team = team
+            self.rank = rank
+            self.season = season
+            self.league = league
+        except ValueError as e:
+            print("An incorrect variable type was entered\n", e)
 
     # public methods
     def get_team(self):
