@@ -1,6 +1,5 @@
 import cProfile
-import Recommendation_lib.recommendations_formations as rl
-from Recommendation_lib import Ranking, Game
+from Recommendation_lib import Ranking, Game, LeagueRecom
 
 if __name__ == "__main__":
     cp = cProfile.Profile()
@@ -18,8 +17,15 @@ if __name__ == "__main__":
     game_list.append(Game.Game("D", "3-5-2", "A", "3-4-3", 1, 0, "2019"))
     game_list.append(Game.Game("A", "4-4-2", "C", "3-5-2", 0, 4, "2019"))
 
-    ranking_dict = rl.ranking_list_to_dict(rank_list)
-    recom_dict = rl.formations_info_recom(game_list, ranking_dict, 2, 1)
+    test_game_list = []
+    test_game_list.append(Game.Game("A", "4-4-2", "B", "4-3-3", 1, 0, "2019"))
+    test_game_list.append(Game.Game("B", "4-1-4-1", "C", "4-4-2", 1, 0, "2019"))
+    test_game_list.append(Game.Game("C", "3-5-2", "D", "3-4-3", 1, 1, "2019"))
+    test_game_list.append(Game.Game("D", "5-3-2", "A", "4-4-2", 1, 0, "2019"))
+
+    league_recom = LeagueRecom.LeagueRecom(game_list, rank_list, 2, 1)
+    league_recom.create_league_recom()
+    league_recom.validate_recom_dict(test_game_list)
 
     cp.disable()
     cp.print_stats()
